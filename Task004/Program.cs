@@ -14,23 +14,23 @@ int[,] CreationMatrix(int row, int col)
 }
 
 // Метод заполнения массива по спирали
-int[,] FillMatrixSpiral(int[,] sqareMatrix)
+int[,] FillMatrixSpiral(int[,] squareMatrix)
 {
     int temp = 1, i = 0, j = 0;      // инициализируем счетчик цифр и индексы
-    while (temp <= sqareMatrix.Length) // цикл будет продолжатся пока не заполнит все элементы
+    while (temp <= squareMatrix.Length) // цикл будет продолжатся пока не заполнит все элементы
     {
-        sqareMatrix[i, j] = temp; // присваиваем первому элементу массива значение 1
+        squareMatrix[i, j] = temp; // присваиваем первому элементу массива значение 1
         temp++; // увеличиваем счетчик цифр
-        if (i <= j + 1 && i + j < sqareMatrix.GetLength(1) - 1)
+        if (i <= j + 1 && i + j < squareMatrix.GetLength(1) - 1)
             j++;
-        else if (i < j && i + j >= sqareMatrix.GetLength(0) - 1)
+        else if (i < j && i + j >= squareMatrix.GetLength(0) - 1)
             i++;
-        else if (i >= j && i + j > sqareMatrix.GetLength(1) - 1)
+        else if (i >= j && i + j > squareMatrix.GetLength(1) - 1)
             j--;
         else
             i--;
     }
-    return sqareMatrix;
+    return squareMatrix;
 }
 
 // Метод вывода массива
